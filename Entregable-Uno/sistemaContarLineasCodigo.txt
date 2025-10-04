@@ -1,0 +1,54 @@
+
+
+using System.Text.RegularExpressions;
+
+public class program()
+{
+    static void Main()
+    {
+        int contadorClases = 0;
+        int contadorVariables = 0;
+        int contadorMetodos = 0;
+        int cantidadLineas = 0;
+
+        string rutaArchivo = @"C:\\Users\\Camilo\\Desktop\\LecturaTxt\\Sample.txt";
+        string extensión = Path.GetExtension(rutaArchivo);
+
+        try
+        {
+            if (extensión.Equals(".txt", StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("El archivo es un TXT.");
+
+                string contenido = File.ReadAllText(rutaArchivo) ;
+
+                cantidadLineas = File.ReadAllLines(rutaArchivo).Count(linea => !			string.IsNullOrWhiteSpace(linea));
+
+                Console.WriteLine($"Cantidad de lineas en el archivo:{cantidadLineas}");
+
+                Regex regexClases = new Regex(@"\bclass\b\s+\w+", RegexOptions.IgnoreCase);
+                contadorClases = regexClases.Matches(contenido).Count;
+
+                Regex regexVariables = new Regex(@"\b(int|string|bool|double|char)\b\s+			\w+",RegexOptions.IgnoreCase);
+                contadorVariables = regexVariables.Matches(contenido).Count;
+
+		        Regex regexMetodos = new Regex(@"\b(public|private|protected|internal)\s+(static\s+)?(void|int|string|double|\w+)\s+\w+\s*\(", RegexOptions.IgnoreCase);
+                contadorMetodos = regexMetodos.Matches(contenido).Count;
+
+
+
+		        Console.WriteLine($"Clases encontradas: {contadorClases}");
+    		    Console.WriteLine($"Variables encontradas: {contadorVariables}");
+    		    Console.WriteLine($"Métodos encontrados: {contadorMetodos}");
+            }
+            else
+            {
+                Console.WriteLine("El archivo NO es un TXT.");
+            }
+        }
+        catch (Exception e)
+        {
+              Console.WriteLine("Exception: " + e.Message);
+        }
+    }
+}

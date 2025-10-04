@@ -1,0 +1,87 @@
+public class suma(int numeroUno, int numeroDos)
+{
+    public int numberUnoPerson { get; set; }
+
+    public int numeroDosPerson { get; set; }
+
+    public suma(int numberOne, int numberTwo)
+    {
+        numberUnoPerson = numberOne;
+        numeroDosPerson = numberTwo;
+    }
+
+    public void sumarNumeros(int numberOne, int numberTwo)
+    {
+        int Suma;
+        Suma = numberOne + numberTwo;
+    }
+}
+
+public class Resta(int numeroUno, int numeroDos)
+{
+    public int numberUnoPerson { get; set; }
+
+    public int numeroDosPerson { get; set; }
+
+    public Resta(int numberOne, int numberTwo)
+    {
+        numberUnoPerson = numberOne;
+        numeroDosPerson = numberTwo;
+    }
+
+    public void RestarNumeros(int numberOne, int numberTwo)
+    {
+        int resta;
+        resta = numberOne - numberTwo;
+    }
+
+}
+public class Multiplicacion(int numeroUno, int numeroDos)
+{
+    public int numberUnoPerson { get; set; }
+
+    public int numeroDosPerson { get; set; }
+
+    public Multiplicacion(int numberOne, int numberTwo)
+    {
+        numberUnoPerson = numberOne;
+        numeroDosPerson = numberTwo;
+    }
+
+    public void MultiplicacionNumeros(int numberOne, int numberTwo)
+    {
+        int multiplicacion;
+        multiplicacion = numberOne * numberTwo;
+    }
+
+}
+public class Division(int numeroUno, int numeroDos)
+{
+    public int numberUnoPerson { get; set; }
+
+    public int numeroDosPerson { get; set; }
+
+    public Division(int numberOne, int numberTwo)
+    {
+        numberUnoPerson = numberOne;
+        numeroDosPerson = numberTwo;
+    }
+
+    public void DivisionNumeros(int numberOne, int numberTwo)
+    {
+        double divison;
+        divison = numberOne / numberTwo;
+    }
+
+}
+
+public class Main()
+{
+    static void Main()
+    {
+        suma Sumaperson = new suma(5, 2);
+        Resta Restaperson = new Resta(1, 2);
+        Multiplicacion Multiplicacionperson = new Multiplicacion(5, 7);
+        Division Divisionperson = new Division(5, 7);
+    }
+}
